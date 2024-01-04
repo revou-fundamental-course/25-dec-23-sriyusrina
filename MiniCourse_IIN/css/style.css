@@ -1,0 +1,46 @@
+.navbar-logo {
+    width: 70px; /* Ubah sesuai kebutuhan */
+    height: auto; /* Untuk menjaga rasio aspek */
+    margin-left: 150px;
+}
+
+.poppins-bold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: large;
+    color: black;
+}
+
+.navbar-nav .nav-item .nav-link.poppins-bold:hover {
+    color: rgb(0, 0, 0) !important;
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 230, 0);
+}
+
+.navbar-nav .nav-item .nav-link.poppins-bold.active {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 230, 0);
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navbar-profile img {
+    width: 70px; /* Sesuaikan ukuran logo profil */
+    height: 70px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin-right: 10px;
+}
+
+.navbar-profile span {
+    margin-right: 10px;
+}
+
+.navbar-profile .small-text {
+    font-size: 15px;
+    color: #777; /* Warna tulisan kecil */
+}
+

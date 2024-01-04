@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Ini adalah Title-->
+    <title>Mini Project RevoU - Sri Yusrina</title>
+    <!--Ini adalah icon pada title-->
+    <link rel="icon" href="img/revou.png" type="image/png">
+    <!--Ini adalah link untuk css external-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Menambahkan Bootstrap 5-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+
+    <!--Menambahkan Font Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
+
+    <style>
+        .text-container {
+    overflow: hidden;
+    border-right: 2px solid #000;
+    white-space: nowrap;
+    font-size: 2rem;
+    }
+
+    .center-text {
+        margin-top: 200px;
+        margin-left: -140px;
+        text-align: center;
+    }
+
+    #animated-text {
+        display: inline-block;
+        animation: typing 3s steps(20) infinite, blink-caret 0.5s step-end infinite;
+    }
+
+    @keyframes typing {
+        from, to {
+            width: 0;
+        }
+
+        50% {
+            border-right: none;
+        }
+    }
+
+    @keyframes blink-caret {
+        from, to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: #000;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar Dengan Bootsrap 5 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Ganti teks dengan elemen img untuk menampilkan logo -->
+            <a class="navbar-brand" href="#"><img src="img/revou.png" alt="Logo" class="navbar-logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link poppins-bold text-dark" href="index.html" style="margin-left: 370px;">Segitiga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link poppins-bold text-dark active" href="persegi.html" style="margin-left: 20px;">Persegi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link poppins-bold text-dark " href="jajargenjang.html" style="margin-left: 15px;">Jajargenjang</a>
+                    </li>
+                </ul>
+                <div class="navbar-profile">
+                    <div style="display: flex; flex-direction: column;">
+                        <span class="poppins-bold text-dark">Sri Yusrina</span>
+                        <div class="small-text">Website Ini Belum Responsif</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Navbar Selesai-->
+
+    <div class="center-text text-container">
+        <span id="animated-text"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const text = "On Progres. . . .";
+        let charIndex = 0;
+        let animatedText = document.getElementById('animated-text');
+
+        function type() {
+            animatedText.textContent += text.charAt(charIndex);
+            charIndex++;
+
+            if (charIndex < text.length) {
+                setTimeout(type, 150);
+            } else {
+                setTimeout(erase, 1000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                animatedText.textContent = text.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 100);
+            } else {
+                setTimeout(type, 500);
+            }
+        }
+
+        type();
+    });
+    </script>
+
+</body>
+</html>
